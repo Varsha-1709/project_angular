@@ -1,0 +1,122 @@
+<h3 class="text-center">Let's Learn DataBinding</h3>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>My Name is: {{myName}}</div>
+  <div>My Name is: <span [innerText]="myName"></span></div>
+  <div>My Name is: <span bind-innerText="myName"></span></div>
+
+  <img src="{{img_url}}" width="300" height="300" class="mx-1" />
+  <img [src]="img_url" width="300" height="300" class="mx-1" />
+  <img bind-src="img_url" width="300" height="300" class="mx-1 my-2" />
+
+  <div>
+    <input placeholder="Enter something..." value="mobile" />
+    1 way: <input value={{myName}} class="mx-2" />
+    1 way: <input [value]=myName class="mx-2" />
+    1 way:<input bind-value=myName class="mx-2" />
+    2 way:<input [(ngModel)]="myName" class="mx-2" />
+  </div>
+
+  <div>Interpolation VS property Binding</div>
+  <button class="btn btn-primary" (click)="addToCart()">Add To Cart</button>
+  <button class="btn btn-primary mx-2" on-click="addToCart()">Add To Cart</button>
+  <!-- <button class="btn btn-primary mx-2" disabled>Add To Cart</button> -->
+  <button class="btn btn-primary mx-2" disabled={{flag}}>Add To Cart</button>
+  <button class="btn btn-primary mx-2" [disabled]=flag>Add To Cart</button>
+  <button class="btn btn-primary mx-2" bind-disabled=flag>Add To Cart</button>
+</div>
+
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+  </div>
+  <h1 [style.display]="showhide()">Helloooooooooooooooooooooooo</h1>
+  <button class="btn btn-primary" (click)="checkdisplay()">SHOW/HIDE</button>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</div>
+  <textarea [(ngModel)]="ip" [maxlength]="maxlen"></textarea>
+  <div>Remaining Chars: {{maxlen-ip.length}}</div>
+</div>
+
+<div>
+  <select [(ngModel)]="st">
+    <option>Virginia</option>
+    <option>New York</option>
+    <option>Florida</option>
+    <option>Texas</option>
+  </select>
+  <p>State:Selected {{st}}</p>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+  </div>
+  <h1 [hidden]="flag">Helloooooooooooooooooooooooo</h1>
+  <button class="btn btn-secondary" (click)="flag=!flag" >{{flag?'SHOW':'HIDE'}}</button>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</div>
+  <textarea [(ngModel)]="msg" [maxlength]="100"></textarea>
+  <div>{{msg}}</div>
+  <div>Remaining Chars: {{100-msg.length}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>3. Create a drop-down with state names, when user changes dropdown value, print the selected dropdown value in a div</div>
+  <select [(ngModel)]="selectedstate">
+    <option></option>
+    <option>Virginia</option>
+    <option>New York</option>
+    <option>Texas</option>
+    <option>Florida</option>
+    <option>NC</option>
+    <option>Arizona</option>
+  </select>
+  <div>
+    Selected state is: {{selectedstate}}
+  </div>
+</div>
+
+
+<div>
+  class="border border-3 rounded-3 p-2 m-2">
+  <div>4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</div>
+  <input type='number' [(ngModel)]='num1'/>
+  <input type='number' [(ngModel)]='num2'/>
+  <select [(ngModel)]='op'>
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+  </select>
+  <div>Result: {{calculatedResult}}</div>
+  <button (click)=calculate()>calculate</button>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>5.create a input box, toggle the type of that input box to (text/password)
+  </div>
+  <input type="{{flag? 'text':'password'}}"/>
+  <button class="btn btn-primary mx-2" (click)="flag=!flag" >Toggle</button>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>6. create a counter example with 3 controls(increment,decrement,reset)
+  </div>
+  <h3>Count::{{count}}</h3>
+  <button class="btn btn-secondary" (click)="count=count-1" >Decreement</button>
+  <button class="btn btn-danger" (click)="count=0" >Reset</button>
+  <button class="btn btn-primary" (click)="count=count+1" >Increement</button>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+  <div>7.Have a toggle button and control Dark/Light theme of a page.
+  </div>
+  <button class="btn btn-primary " (click)='toggleTheme()'>{{flag ? 'Light Theme':'Dark Theme'}}</button>
+</div>
+
+
+
