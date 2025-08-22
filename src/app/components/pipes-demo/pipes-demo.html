@@ -1,0 +1,111 @@
+<p>pipes-demo works!</p>
+<div class="border border-3 rounded-3 p-2 m-2">
+    <h5>uppercase, lowercase,titlecase pipe:</h5>
+    <div>Name without pipe: {{myname}}</div>
+    <div>Name with uppercase pipe:{{myname|uppercase}}</div>
+    <div>Name with lowercase pipe:{{myname|lowercase}}</div>
+    <div>Name with titlecase pipe:{{myname|titlecase}}</div>    
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <h5>Currency pipe:</h5>
+    <div>Currency without pipe: {{mysal}}</div>
+    <div>Currency with pipe:{{mysal|currency:'USD':'symbol'}}</div>
+    <div>Currency with pipe:{{mysal|currency:'USD':'code'}}</div>
+    <div>Currency with pipe:{{mysal|currency}}</div>
+    <div>Currency with pipe:{{mysal|currency:'INR'}}</div>
+    <div>Currency with pipe:{{mysal|currency:'&euro;'}}</div>
+    <div>Currency with pipe:{{mysal|currency:'&#x5143;'}}</div>    
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <h5>Date pipe:</h5>
+    <div>{{today}}</div>
+    <div>{{today|date}}</div>
+    <div>{{today|date:'shortDate'}}</div>
+    <div>{{today|date:'mediumDate'}}</div>
+    <div>{{today|date:'longDate'}}</div>
+    <div>{{today|date:'fullDate'}}</div>
+     <div>{{today|date:'shortTime'}}</div>
+    <div>{{today|date:'mediumTime'}}</div>
+    <div>{{today|date:'longTime'}}</div>
+    <div>{{today|date:'fullTime'}}</div>
+    <!--Custom formatting-->
+    <div>{{today|date : 'MM/dd/yyyy'}}</div>
+    <!--Pipe chaining-->
+    <div>{{today|date : 'MMMM/dd/yyyy'|lowercase}}</div>
+    <div>{{today|date : 'MMMM/dd/yyyy'|uppercase}}</div>
+    <div>{{today|date : 'MMMM/dd/yyyy'}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <h5>number or decimal & percent pipe:</h5>
+    <div>{{ 12.111222333 | number: "3.2-5" }}</div>
+    <!--before dec 3, after decimal 2-->
+    <div>{{ 2.5 | number: "3.2-5" }}</div>
+     <div>{{ 2.5 |percent}}</div>
+     <!--will multiply by 100 and place % symbol-->
+     <div>{{ 0.7 |percent}}</div>
+     <div>{{ 0.064|percent}}</div>
+     <div>{{ 0.07 |percent}}</div>       
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <h5>json pipe:</h5>
+    <div>{{user}}</div>
+    <div>{{user|json}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!--to iterate the object data-->
+    <h5>keyvalue pipe:</h5>
+    @for(entry of user | keyvalue;track $index){
+   <div>{{entry.key}}---{{entry.value}}</div>
+}
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!--to iterate the array data-->
+    <h5>slice pipe:</h5>
+    <div>{{arr}}</div>
+    <div>{{arr|slice:2}}</div>
+    <div>{{arr|slice:2:5}}</div>    
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!--similar to promise, and more powerful
+    data not known to us but will be available in future
+    we have a taken interval for 2000 seconds-->
+    <h5>async(observable) pipe:</h5>
+    <div>Observable::{{num}}</div>  
+    <div>Subscribe the Observable::{{num|async}}</div> 
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!--custom pipe-->
+    <h5>custom pipe:</h5>
+    <textarea maxlength="100" [(ngModel)]="msg"></textarea>
+    <div>{{msg}}</div>
+    <div>{{msg|remaining}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!--custom pipe-->
+    <h5>custom pipe:</h5>
+    <textarea maxlength="200" [(ngModel)]="msg2"></textarea>
+    <div>{{msg2}}</div>
+    <div>{{msg2|remaining:200}}</div>
+</div>
+
+<div class="border border-3 rounded-3 p-2 m-2">
+    <!--pure & impure-->
+    <h5>pure & impure pipe</h5>
+    <h4>
+        @for(ele of arr;track $index){
+            <span>{{ele}} &nbsp;</span>
+        }
+    </h4>
+    <input #newNum/>
+    <button class="btn btn-primary mx-2" (click)=arr.push(+newNum.value)>addnum</button>
+</div>
+

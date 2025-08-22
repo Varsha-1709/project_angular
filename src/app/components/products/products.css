@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;              /* make all cards same height */
+}
+
+.card-body {
+  flex-grow: 1;              /* stretch the body to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push button to bottom */
+}
+
+.card-img-top {
+  height: 200px;             /* fix image height */
+  object-fit: contain;       /* fit inside without distortion */
+}

@@ -1,0 +1,9 @@
+.inactive{
+  width:auto;
+}
+
+.Manager td{
+  font-weight: bold;
+  color: rgb(0, 187, 255) ;
+  
+}

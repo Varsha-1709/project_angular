@@ -1,0 +1,32 @@
+<h3 class="text-center">Employee List</h3>
+<table class="table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Department</th>
+            <th>IsActive</th>
+            <th>action</th>
+
+    </tr>
+</thead>
+<tbody>
+
+
+    @for (emp of employees; track $index) {
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td>{{emp.department}}</td>
+            <td>{{emp.isActive}}</td>
+            <td>
+                <fa-icon [icon]='faTrash'/>
+                <fa-icon [icon]='faEye' class='mx-2'/>
+                <fa-icon [icon]='faEdit'/>
+            </td>
+</tr>
+}
+</tbody>
+</table>

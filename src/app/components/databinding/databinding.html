@@ -1,7 +1,16 @@
+<style>
+  img{
+    border-radius: 20px;
+  }
+
+</style>
+
+
+
 <h3 class="text-center">Let's Learn DataBinding</h3>
 
 <div class="border border-3 rounded-3 p-2 m-2">
-  <div>My Name is: {{myName}}</div>
+  <div style="color: blue">My Name is: {{myName}}</div>
   <div>My Name is: <span [innerText]="myName"></span></div>
   <div>My Name is: <span bind-innerText="myName"></span></div>
 
@@ -118,5 +127,19 @@
   <button class="btn btn-primary " (click)='toggleTheme()'>{{flag ? 'Light Theme':'Dark Theme'}}</button>
 </div>
 
+<div class="border border-3 rounded-3 p-2 m-2">
+<div>Addition using 2 way binding</div>
+<input type="number" [(ngModel)]="num1" />
+<input type="number" [(ngModel)]="num2" />
+<p>Addition is::{{num1+num2}}</p>
 
+<div class="border border-3 rounded-3 p-2 m-2">
+<div>Addition using template refere variable</div>
+<input type="number" #num3 />
+<input type="number" ref-num4 />
+<button class="btn btn-primary" (click)="addition(num3.value,num4.value)">Add</button>
+<p>Addiiton is {{addResult}}</p>
+
+  </div>
+  
 

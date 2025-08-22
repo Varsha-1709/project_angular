@@ -69,5 +69,10 @@ export class Databinding {
       document.body.style.backgroundColor='white';
     }
   }
+
+  addResult=0;
+  addition(num3:string,num4:string){
+    this.addResult=+num3 + +num4;
+  }
   
 }

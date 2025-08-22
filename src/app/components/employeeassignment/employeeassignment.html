@@ -1,0 +1,29 @@
+
+<p>Employee Crud table</p>
+    <table class="table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Actions</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+        @for ( emp of employees; track $index;let i=$index) {
+          <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.username}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.phone}}</td>
+            <td>{{emp.website}}</td>
+            <td><fa-icon [icon]="faTrash" (click)="delemp(i)"></fa-icon></td>
+        </tr>
+        }</tbody>
+</table>
+

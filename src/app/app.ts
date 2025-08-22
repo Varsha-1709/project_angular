@@ -5,10 +5,11 @@ import { Categories } from "./components/categories/categories";
 import { Carousel } from "./components/carousel/carousel";
 import { Body } from "./components/body/body";
 import { Footer } from "./components/footer/footer";
+import { Tablecard } from "./components/tablecard/tablecard";
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar,Body, Footer],
+  imports: [Navbar, Body, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

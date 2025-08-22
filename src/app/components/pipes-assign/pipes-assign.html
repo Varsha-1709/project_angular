@@ -1,0 +1,65 @@
+<div>pipes-assign works!</div>
+<h4>returning 21, 22 as 21st,22nd</h4>
+<input type="number" [(ngModel)]="numberInput">
+<div>You entered:: {{numberInput}}</div>
+<div>Your output:: {{numberInput|pipe1}}</div>
+
+<h4>returning roman numerals</h4>
+<input type="number" [(ngModel)]="numberIp">
+<div>You entered:: {{numberIp}}</div>
+<div>Your output:: {{+numberIp|pipe2}}</div>
+
+<h4> create a custom pipe called 'age' which takes a date as input and returns the age in years.</h4>
+<input type="date" [(ngModel)]="dateofbirth">
+<div>You entered:: {{dateofbirth}}</div>
+<div>Your output:: {{dateofbirth|pipe3}}</div>
+
+<h4> declare an array of employee objects. display them in a table.
+   create a custom pipe 'Salutation' that will add 'mr. / miss.' before the employee name.</h4>
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Emp Id</th>
+            <th>Name</th>
+            <th>SAlary</th>
+            <th>Gender</th>
+        </tr>
+        <tbody>
+            @for(emp of employees;track emp.eId){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name|pipe4:emp.gender}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 
+
+<!--<h4>  declare an array of employee objects. display them in a table. 
+   add a search-box above the table. create a custom-pipe to filter/search employees data.</h4>
+   <div>Enter the string you want to search:
+    <input type="text" [(ngModel)]="searchtxt">
+
+</div>
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Emp Id</th>
+            <th>Name</th>
+            <th>SAlary</th>
+            <th>Gender</th>
+        </tr>
+        <tbody>
+            @for(emp of employees|pipe5:searchtxt;track emp.eId){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name|pipe4:emp.gender}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> -->

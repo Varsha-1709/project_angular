@@ -1,0 +1,33 @@
+<h3 class="text-center">Products List</h3>
+<div class="container">
+    <div class="class=col-sm-9">
+<input type="search" class="col-sm-4 offset-4 p-1"  [(ngModel)]="searchText">
+<button class="btn btn-success mx-2" (click)="filterData()">Search</button>
+</div>
+     <div class="class=col-sm-3">
+<button class="btn btn-primary mx-2" (click)="sortByPriceAsc()">Sort Asc</button>
+<button class="btn btn-secondary mx-2" (click)="sortByPriceDesc()">Sort Desc</button>
+
+    </div>
+    <div class="row mt-2">
+        @for (prod of productsArr | paginate: { itemsPerPage: 4, currentPage: p}; track $index) {
+        <div class="col-sm-3">
+            <div class="card" >
+            <img [src]="prod.image" class="card-img-top" height="300px" width="300px" alt="{{prod.title}}">
+            <div class="card-body" text-center>
+            <h5 class="card-title">{{prod.id}}</h5>
+            <p class="card-text">{{prod.title}}</p>
+            <p class="card-text">{{prod.price}}</p>
+            <p class="card-text">{{prod.category}}</p>
+            <p class="card-text">{{prod.rating.rate}} <fa-icon [icon]="faStar" style="color: blue"></fa-icon>({{prod.rating.count}})</p>
+           
+            <a href="#" class="btn btn-primary">Details</a>
+        </div>
+        </div>
+        </div>
+}
+    </div>
+     <div class="'col-sm-4 offest-4 mt-2">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

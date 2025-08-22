@@ -1,0 +1,118 @@
+@if(flag){
+    <table class="table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+        @for (emp of employees; track $index) {
+          <tr>
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.status}}</td>
+        </tr>
+        }</tbody>
+</table>
+}
+ 
+  
+@if(!flag){
+  <div class="container">
+    <div class="row">
+  @for(emp of employees;track $index){
+    <div class="col-sm-3 height=300px width=300px">
+<div class="card">
+  <img class="card-img-top" src="https://assets.codepen.io/1477099/internal/avatars/users/default.png?fit=crop&format=auto&height=512&version=1578512866&width=512" alt=" ">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{emp.name}}</h5>
+    <p class="card-text">{{emp.role}}</p>
+    <p class="card-text">{{emp.salary}}</p>
+    <p class="card-text">{{emp.status}}</p>
+    <a href="#" class="btn btn-primary">Details</a>
+  </div>
+</div>
+</div>
+  }
+  </div>
+  </div>
+
+}
+
+<button (click)="toggle()">{{flag?"Card":"Table"}}</button>
+
+ <table class="table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+        @for (emp of employees; track $index) {
+          <tr>
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td [ngStyle]="{color:emp.salary>50000?'green':'red'}">{{emp.salary}}</td>
+            <td>{{emp.status}}</td>
+        </tr>
+        }</tbody>
+</table>
+
+ <table class="table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+        @for (emp of employees; track $index) {
+          <tr [ngClass]="{'inactive':emp.status==='Inactive',
+            'manager':emp.role==='Manager'
+          }">
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td [ngStyle]="getSal(emp)">{{emp.salary}}</td>
+            <td>{{emp.status}}</td>
+        </tr>
+        }</tbody>
+</table>
+<style>
+  .inactive{
+    background-color: brown;
+    color:lightgreen;
+  }
+  .manager{
+    font-weight: bold;
+    color: blue;
+  }
+</style>
+
+ <table class="table-bordered table-striped" >
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+        @for (emp of employees; track $index) {
+          <tr [ngStyle]="getRowStyle(emp)" [ngClass]="{'manager':emp.role==='Manager'}">
+            <td>{{emp.name}}</td>
+            <td>{{emp.role}}</td>
+            <td [ngStyle]="getSal(emp)">{{emp.salary}}</td>
+            <td>{{emp.status}}</td>
+        </tr>
+        }</tbody>
+</table>
