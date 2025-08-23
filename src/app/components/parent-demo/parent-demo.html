@@ -1,17 +1,22 @@
 <p>parent-demo works!</p>
-<div class="container">
+<div class="container border border-3 mt-2">
     <div class="row text-center">
         <h3>This is parent</h3>
         <hr/>
         <div>My own data a is:: {{a}}</div>
+        <div>I can pull data from my child :: {{child2.b}}</div>
+        <div>I can receive data from my child :: {{parentName}}</div>
+        <div>
+          <input type="number" [(ngModel)]="a" />  
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
-            <app-child1-demo [a]="a"></app-child1-demo>
+        <div class="col-sm-6 border border-3 mt-2">
+            <app-child1-demo [a]="a" [b]="child2.b"></app-child1-demo>
         </div>
-        <div class="col-sm-6">
-           <app-child2-demo></app-child2-demo>
+        <div class="col-sm-6 border border-e mt-2">
+           <app-child2-demo [achild2]="a" #child2 (nameEvent)="receiveDataFromChild($event)"></app-child2-demo>
         </div>
     </div>
 </div>

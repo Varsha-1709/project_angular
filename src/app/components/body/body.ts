@@ -12,10 +12,12 @@ import { Employeeassignment } from '../employeeassignment/employeeassignment';
 import { PipesDemo } from "../pipes-demo/pipes-demo";
 import { PipesAssign } from '../pipes-assign/pipes-assign';
 import { ParentDemo } from '../parent-demo/parent-demo';
+import { EmployeeCRUD } from '../employee-crud/employee-crud';
+import { Empcrud } from '../empcrud/empcrud';
 
 @Component({
   selector: 'app-body',
-  imports: [PipesAssign],
+  imports: [Empcrud],
   templateUrl: './body.html',
   styleUrl: './body.css',
   //encapsulation: ViewEncapsulation.Emulated

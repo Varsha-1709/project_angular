@@ -101,11 +101,11 @@
     <!--pure & impure-->
     <h5>pure & impure pipe</h5>
     <h4>
-        @for(ele of arr;track $index){
+        @for(ele of arr|mySort;track $index){
             <span>{{ele}} &nbsp;</span>
         }
     </h4>
     <input #newNum/>
-    <button class="btn btn-primary mx-2" (click)=arr.push(+newNum.value)>addnum</button>
+    <button class="btn btn-primary mx-2" (click)="arr.push(+newNum.value)">addnum</button>
 </div>
 

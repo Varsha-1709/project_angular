@@ -18,12 +18,14 @@
    create a custom pipe 'Salutation' that will add 'mr. / miss.' before the employee name.</h4>
 <div>
     <table class="table table-bordered table-striped">
+        <thead>
         <tr>
             <th>Emp Id</th>
             <th>Name</th>
             <th>SAlary</th>
             <th>Gender</th>
         </tr>
+        </thead>
         <tbody>
             @for(emp of employees;track emp.eId){
                 <tr>
@@ -37,29 +39,32 @@
     </table>
 </div> 
 
-<!--<h4>  declare an array of employee objects. display them in a table. 
+<h4>  declare an array of employee objects. display them in a table. 
    add a search-box above the table. create a custom-pipe to filter/search employees data.</h4>
    <div>Enter the string you want to search:
     <input type="text" [(ngModel)]="searchtxt">
 
 </div>
+
 <div>
     <table class="table table-bordered table-striped">
+        <thead>
         <tr>
             <th>Emp Id</th>
             <th>Name</th>
             <th>SAlary</th>
             <th>Gender</th>
         </tr>
+        </thead>
         <tbody>
-            @for(emp of employees|pipe5:searchtxt;track emp.eId){
+            @for(emp of employees|pipe5:searchtxt;track $index){
                 <tr>
                     <td>{{emp.eId}}</td>
-                    <td>{{emp.name|pipe4:emp.gender}}</td>
+                    <td>{{emp.name}}</td>
                     <td>{{emp.sal}}</td>
                     <td>{{emp.gender}}</td>
                 </tr>
             }
         </tbody>
     </table>
-</div> -->
+</div> 

@@ -8,7 +8,7 @@ import { Pipe5Pipe } from '../../custom-pipes/pipe5-pipe';
 
 @Component({
   selector: 'app-pipes-assign',
-  imports: [FormsModule,Pipe1Pipe,Pipe2Pipe,Pipe3Pipe,Pipe4Pipe],
+  imports: [FormsModule,Pipe1Pipe,Pipe2Pipe,Pipe3Pipe,Pipe4Pipe,Pipe5Pipe],
   templateUrl: './pipes-assign.html',
   styleUrl: './pipes-assign.css'
 })
@@ -16,6 +16,7 @@ export class PipesAssign {
   numberInput:number=0;
   numberIp:number=0;
   dateofbirth:string='';
+  
   employees = [
     { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
     { "eId": 104, "name": "geeta", "sal": 8000, "gender": "female" },
@@ -24,6 +25,7 @@ export class PipesAssign {
     { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
   ];
 
- // searchtxt:string=""; 
+
+ searchtxt:string=""; 
 
 }

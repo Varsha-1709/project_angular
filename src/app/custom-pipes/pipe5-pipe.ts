@@ -5,13 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class Pipe5Pipe implements PipeTransform {
 
-  transform(emp:any,searchstring:string){
-    if(!searchstring){
-      return emp
-    }
-    else{
-      return emp.filter((emp:any)=>emp.eId===+searchstring);
-    }
+  transform(employees:any[],searchstring:string): any[]{
+    if(!employees) return [];
+    if(!searchstring) return employees;
+    searchstring = searchstring.toLowerCase();
+    return employees.filter(emp=>
+      emp.eId.toString().includes(searchstring) ||
+      emp.name.toLowerCase().includes(searchstring) ||
+      emp.sal.toString().includes(searchstring) ||
+      emp.gender.toLowerCase().includes(searchstring)
+
+    );
   }
 
 }

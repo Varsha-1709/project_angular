@@ -1,0 +1,28 @@
+<h4> Pass data from EmployeeCRUD to EmployeeTable, EmployeeTable should display the data in table</h4>
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Emp Id</th>
+            <th>Name</th>
+            <th>SAlary</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(emp of a;track emp.eId){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="ondel(emp.eId)">
+                            Delete</button>
+                        </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

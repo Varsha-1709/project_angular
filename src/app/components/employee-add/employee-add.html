@@ -1,0 +1,19 @@
+<div class="border border-3 rounded-3 p-2 m-2">
+    <h3>Add the employee details</h3>
+    <div>Enter Id:
+        <input type="number" placeholder="ID" [(ngModel)]="new_emp.eId">
+    </div>
+    <div>Enter Name:
+        <input type="text" placeholder="Name" [(ngModel)]="new_emp.name">
+    </div>
+     <div>Enter Sal:
+        <input type="text" placeholder="Salary" [(ngModel)]="new_emp.sal">
+    </div>
+     <div>Enter Gender:
+        <input type="text" placeholder="Gender" [(ngModel)]="new_emp.gender">
+    </div>
+      <div>
+        <button class="btn btn-success" (click)="addemp(new_emp)">add </button>
+    </div>
+
+</div>

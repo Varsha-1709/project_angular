@@ -16,7 +16,7 @@ export class PipesDemo {
   mysal=5000;
   today=new Date();
   user={name:'virat kohli',age:45,add:'Delhi'};
-  arr=[10,20,30,40,50,60,70];
+  arr=[10,20,30,40,50,13,60,70];
   num=interval(2000);
   msg='';
   msg2='';
