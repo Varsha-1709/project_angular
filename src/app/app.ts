@@ -6,6 +6,7 @@ import { Carousel } from "./components/carousel/carousel";
 import { Body } from "./components/body/body";
 import { Footer } from "./components/footer/footer";
 import { Tablecard } from "./components/tablecard/tablecard";
+import 'zone.js';
 
 @Component({
   selector: 'app-root',

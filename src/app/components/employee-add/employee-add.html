@@ -2,6 +2,7 @@
     <h3>Add the employee details</h3>
     <div>Enter Id:
         <input type="number" placeholder="ID" [(ngModel)]="new_emp.eId">
+        <!--ngmodel uses 2 way binding and reflects to input in ts-->
     </div>
     <div>Enter Name:
         <input type="text" placeholder="Name" [(ngModel)]="new_emp.name">
@@ -14,6 +15,7 @@
     </div>
       <div>
         <button class="btn btn-success" (click)="addemp(new_emp)">add </button>
+        <!--calls addemp(new_emp) passing new_emp oobject as argument-->
     </div>
 
 </div>

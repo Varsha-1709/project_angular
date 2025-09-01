@@ -1,0 +1,33 @@
+
+<h4> Employee component table with dropdown</h4>
+
+<div>
+    <h2>Displaying of Employee Table by selecting from drop down </h2>
+    <label for="empdropdown">Select what you want to display</label>
+    <select  id="empdropdown" [(ngModel)]="ipvalue" (click)="loademp()">
+        <option value="allemp">All Employees Table</option>
+        <option value="maleemp">Male Employees Table</option>
+        <option value="femaleemp">Female Employees Table</option>
+    </select>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Emp Id</th>
+            <th>Name</th>
+            <th>SAlary</th>
+            <th>Gender</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees;track emp.eId){
+                <tr>
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

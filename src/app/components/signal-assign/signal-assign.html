@@ -1,0 +1,35 @@
+<h3 class="text-center">Let's Learn Signal & Effects</h3>
+
+<div class="col-sm-4 offset-4">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>Staus</th>
+        <th>Toggle Status</th>
+      </tr>
+    </thead>
+   
+    <tbody>
+       @for (item of todo(); track $index) {
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>@if(item.isCompleted){
+                Completed
+            }@else{Pending}</td>
+
+            <td>
+                <button class="button button-primary" (click)="toggle(item.id)">Toggle</button>
+            </td>
+        </tr>
+
+       }
+    </tbody>
+    
+  </table>
+
+  <p>Tasks completed = {{completed().length}}</p>
+ <p>Tasks  yet to complete = {{remaining().length}}</p>
+</div>

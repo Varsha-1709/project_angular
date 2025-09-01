@@ -14,10 +14,12 @@ export class EmployeeAdd {
     name:"",
     sal:null,
     gender:""
-  }
-  addemployee= new EventEmitter<any>();
-  addemp(value:any){
-    this.addemployee.emit(this.new_emp)
+  } //created an object
+
+  addemployee= new EventEmitter(); //emitter instance
+  
+  addemp(value:any){  //it is called by button
+    this.addemployee.emit(this.new_emp) //calls event addemployee by sending new_emp object to parent as 
     this.new_emp={
       eId:null,
       name:"",
