@@ -30,10 +30,13 @@ import { SignalAssign } from '../signal-assign/signal-assign';
 import { TemplateDrivenForm } from '../template-driven-form/template-driven-form';
 import { ModelDrivenForm } from '../model-driven-form/model-driven-form';
 import { RegForm } from '../reg-form/reg-form';
+import { DynamicForm } from '../dynamic-form/dynamic-form';
+import { PasswordGenerator } from '../password-generator/password-generator';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
-  imports: [RegForm],
+  imports: [RouterOutlet],
   templateUrl: './body.html',
   styleUrl: './body.css',
   //encapsulation: ViewEncapsulation.Emulated

@@ -27,9 +27,10 @@ export class ModelDrivenForm {
 
   }
   ngOnInit(){
-    this.createMyForm();
+    this.createMyFormUsingFormGroup();
+    // this.createMyFormUsingFormBuilder();
   }
-  createMyForm(){
+  createMyFormUsingFormGroup(){
     this.myForm=new FormGroup({
     firstName: new FormControl('Varsha',[Validators.required,Validators.minLength(5)]),
     lastName: new FormControl('Kandimalla',[Validators.required]),
@@ -45,5 +46,14 @@ export class ModelDrivenForm {
   submitMyForm(formData:any){
     console.log(formData)
   }
+
+  // createMyFormUsingBuilder(){
+  //   this.myForm = this.createMyFormUsingBuilder.group({
+  //     firstName:['Varsha',[Validators.required],
+  //     lastName: ['Kanddimalla',[Validators.required]],
+  //     address: this.formBuilderGroup
+  //   ]
+  //   })
+  // }
 
 }
